@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset =  'UTF-8'>
+    <!--設定IE Chrome 兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- 使用web framework : bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     <!-- jquery套件 -->
+     <script src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <!-- fullpage套件 -->
+    <script src ='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.7/fullpage.min.js'></script>
+   
+    <!-- 指定螢幕寬度為裝置寬度，畫面載入初始縮放比例 100% -->
+    <title>期末專題-個人履歷網站</title>
+
+    <!-- font awesome -->
+        <link rel = 'stylesheet' href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&family=Source+Serif+Pro:ital@1&display=swap" rel="stylesheet">
+
+        <!-- css 連結 -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='style1.css')}}">
+</head> 
+<body>
+    <!-- 第一部分 -->
+  <div class = 'container'>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href ='{{url_for('index')}}'>
+          
+          <img src="{{ url_for('static',filename='lucosine.JPG') }}" style = 'width:200px'> 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link"  href ='{{url_for('index')}}' style = "
+              background-color:gray;
+              color:white;
+              padding: 9px 20px;
+              border-radius:20px;
+              ">首頁</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  href ='{{url_for('myself')}}' style = "
+                background-color:gray;
+                color:white;
+                padding: 9px 20px;
+                border-radius:20px;
+                ">自我介紹</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href ='{{url_for('experience')}}' style = "
+              background-color:gray;
+              color:white;
+              padding: 9px 20px;
+              border-radius:20px;
+              ">特殊經歷</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href ='{{url_for('information3')}}' style = "
+              background-color:black;
+              color:white;
+              padding: 9px 20px;
+              border-radius:20px;
+              ">興趣</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href ='{{url_for('contact')}}' style = "
+                  background-color:gray;
+                  color:white;
+                  padding: 9px 20px;
+                  border-radius:20px;
+              ">聯絡方式</a>
+            </li>
+            <div class = 'wel'>
+              <a class="brand" href="#">
+                <img src="{{ url_for('static',filename='./welcome.jpg') }}" style = 'width:300px'> 
+              </a>
+            </div>
+           
+
+
+          </ul>
+        </div>
+       </div> 
+    </nav>
+  </div>
+<!-- 第二層 -->
+<div class = 'mydata' id = 'mydata' style = 'position:relative;top:-40px'>
+  <div class = 'special'>
+    <div class = 'pic1'>
+      <img src="{{ url_for('static',filename='十鼓.jpg') }}" alt="selfie pic" class = 'selfie-image' style = 'height:90%;float:left;'>
+    </div>
+    <div class = 'mytext'>
+      <h4><i class="fa-solid fa-drum"></i>~ PERCUSSION LIFE ~<i class="fa-solid fa-drum"></i></h4>
+      <h5>我從幼稚園大班開始接觸打擊樂，至今已經是14年</h5>
+      <h5>打擊樂是我有記憶以來，我最熱愛的一項興趣。因此我開始用鼓棒交織出我最燦爛的童年時光以及青春時期。</h5>  
+      <h5>我在小學參加的社團是<strong>十鼓打擊樂隊</strong>，它是屬於中式打擊樂。在小學階段也受邀參加許多不同場合的表演。</h5> 
+      <h5>在小學四年級時，很幸運當上隊長，開始領導隊上，也帶領隊上贏的許多比賽的佳績！</h5> 
+      <h5>這是我第一次學習如何領導一個團隊，也是第一次意識到團隊合作的重要性！</h5> 
+      <h5  style ='position:relative;left:150px;'><i class="fa-regular fa-music-note"></i> --------------------------------------------------------------------------<i class="fa-regular fa-music-note"></i></h5> 
+      
+    </div>
+    <div class = 'pic1'>
+      <img src="{{ url_for('static',filename='宜蘭3.jpg') }}" alt="selfie pic" class = 'selfie-image' style = 'height:200%;width: 450px;float:left;'>
+    </div>
+    <div class = 'mytext2'>
+      <h5>自從加入十鼓擊樂隊，我意識到我對打擊樂的熱愛，我也很確定這將會是我人生中數一數二熱愛的事情</h5>
+      <h5>國小畢業後，為了不中斷對鼓棒的熱愛，我就順利地加入國中的管樂隊。</h5>  
+      <h5>國中畢業後，我有了新的目標 -- <strong>加入全台數一數二有名的北一女中樂儀隊</strong></h5> 
+      <h5>看似順利的進入許多人夢寐以求的北ㄧ女中樂儀旗隊，背後付出的汗水及淚水，是數不盡的</h5> 
+      <h5>從國小到高中，站在無數次鎂光燈舞台上以及聽到台下觀眾的掌聲及歡呼，我覺得我心中是熱愛表演的</h5> 
+      <h5>也讓我深深體會到<strong>「台上一分鐘，台下十年功」這句話的道理。</strong></h5>
+      <h5  style ='position:relative;left:170px;'>能擁有一件堅持十年以上不間斷的興趣真的很不容易也很少見，但「打擊樂」讓我知道我達成了！</h5>
+      <h5  style ='position:relative;left:170px;'>打擊樂教導我的不只是鼓棒上的技巧或是表演如何不緊張的秘訣，而是讓我在從小就培養對於一件事情的堅持及毅力。</h5>
+      <h5  style ='position:relative;left:190px;'>也因為有這些年累積的經驗，讓我有足夠的勇氣及信心去面對更多未來的挑戰！</h5>
+    </div>
+  </div>
+</div>
+<div class = 'txt'>
+  <h4 style = 'text-align:center; position:relative;top:-30px'><i class="fa-solid fa-camera"></i>小時候表演照片<i class="fa-solid fa-camera"></i></h4>
+</div>
+<div class ='row justify-content-center'>
+  <div class = 'col-sm-4' >
+    <div class = 'yl'>
+      <img src="{{ url_for('static',filename='宜蘭2.jpg') }}" alt="selfie pic" class = 'selfie-image' style ='position:relative;left:70px;' >
+    </div>
+  </div>
+
+  <div class = 'col-sm-4 '>
+    <div class = 'yl2'>
+      <img src="{{ url_for('static',filename='宜蘭二.JPG') }}" alt="selfie pic" class = 'selfie-image' style ='position:relative;left:70px;width:80%'>
+    </div>
+  </div>
+  <div class = 'col-sm-4'>
+    <div class = 'yl3'>
+      <img src="{{ url_for('static',filename='宜蘭4.JPG') }}" alt="selfie pic" class = 'selfie-image' style ='position:relative;left:70px;'>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class = 'txt'>
+  <h4 style = 'text-align:center; position:relative;top:15px'><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i></h4>
+</div>
+<div class ='row justify-content-center;position:relative;top:30px;' >
+  <div class = 'col-sm-6' >
+    <div class = 'pig'>
+      <img src="{{ url_for('static',filename='豬哥亮.jpg') }}" alt="selfie pic" class = 'selfie-image' style ='position:relative;left:110px;width:80%' >
+    </div>
+  </div>
+
+  <div class = 'col-sm-6 '>
+    <div class = 'record'>
+      <img src="{{ url_for('static',filename='錄影.jpg') }}" alt="selfie pic" class = 'selfie-image' style ='position:relative;left:110px;width:80%'>
+    </div>
+  </div>
+</div>
+
+<div class = 'txt'>
+  <h4 style = 'text-align:center; position:relative;top:15px'><i class="fa-solid fa-star-shooting"></i></h4>
+</div>
+<div class ='row justify-content-center;position:relative;top:30px;' >
+  <div class = 'col-sm-4' >
+    <div class = 'drum1'> 
+      <img src="{{ url_for('static',filename='十鼓比賽.jpg') }}" alt="selfie pic" class = 'selfie-image' style ='position:relative;left:110px;width:80%' >
+    </div>
+  </div>
+
+  <div class = 'col-sm-4 '>
+    <div class = 'yl4'>
+      <img src="{{ url_for('static',filename='宜蘭5.jpg') }}" alt="selfie pic" class = 'selfie-image' style ='position:relative;left:110px;width:80%'>
+    </div>
+  </div>
+
+  <div class = 'col-sm-4 '>
+    <div class = 'pre'>
+      <img src="{{ url_for('static',filename='前市長.jpg') }}" alt="selfie pic" class = 'selfie-image' style ='position:relative;left:70px;width:80%'>
+    </div>
+  </div>
+</div>
+
+<div class = 'txt'>
+  <h4 style = 'text-align:center; position:relative;top:15px'><i class="fa-solid fa-certificate"></i>  <i class="fa-solid fa-certificate"></i>  <i class="fa-solid fa-certificate"></i> <i class="fa-solid fa-certificate"></i>  <i class="fa-solid fa-certificate"></i>  <i class="fa-solid fa-certificate"></i> <i class="fa-solid fa-certificate"></i></h4>
+</div>
+<div class ='row justify-content-center;position:relative;top:30px;' >
+  <div class = 'col-sm-6' >
+    <div class = 'dra'>
+      <img src="{{ url_for('static',filename='龍山寺鼓隊.jpeg') }}" alt="selfie pic" class = 'selfie-image' style ='position:relative;left:110px;width:80%' >
+    </div>
+  </div>
+
+  <div class = 'col-sm-6 '>
+    <div class = 'dra2'>
+      <img src="{{ url_for('static',filename='龍山寺柯文哲.jpeg') }}" alt="selfie pic" class = 'selfie-image' style ='position:relative;left:110px;width:80%'>
+    </div>
+  </div>
+</div>
+<!-- 第三層 footer -->
+<footer class ='container-fluid text-center'>
+  <a class='btn' href ='{{url_for('index')}}' style = "
+  background-color:black;
+  color:white;
+  padding: 9px 20px;
+  border-radius:20px;
+  position:relative;top:30px;left:50px;
+  ">回首頁</a>
+
+</footer>
+       
+</body> 
+<!-- js 連結 -->
+    <script src = './script.js'>
+
+    </script>
+</html>

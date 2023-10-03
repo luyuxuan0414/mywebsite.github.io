@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset =  'UTF-8'>
+    <!--設定IE Chrome 兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- 使用web framework : bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     <!-- jquery套件 -->
+     <script src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <!-- fullpage套件 -->
+    <script src ='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.7/fullpage.min.js'></script>
+   
+    <!-- 指定螢幕寬度為裝置寬度，畫面載入初始縮放比例 100% -->
+    <title>期末專題-個人履歷網站</title>
+
+    <!-- font awesome -->
+        <link rel = 'stylesheet' href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&family=Source+Serif+Pro:ital@1&display=swap" rel="stylesheet">
+
+        <!-- css 連結 -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='style1.css')}}">
+</head> 
+<body>
+    <!-- 第一部分導覽列 -->
+  <div class = 'container'>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href ='{{url_for('index')}}'>
+          <img src="{{ url_for('static',filename='lucosine.JPG') }}" style = 'width:200px'> 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link"  href ='{{url_for('index')}}' style = "
+              background-color:gray;
+              color:white;
+              padding: 9px 20px;
+              border-radius:20px;
+              ">首頁</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  href ='{{url_for('myself')}}'style = "
+                background-color:black;
+                color:white;
+                padding: 9px 20px;
+                border-radius:20px;
+                ">自我介紹</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href ='{{url_for('experience')}}' style = "
+              background-color:gray;
+              color:white;
+              padding: 9px 20px;
+              border-radius:20px;
+              ">特殊經歷</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href ='{{url_for('information3')}}' style = "
+              background-color:gray;
+              color:white;
+              padding: 9px 20px;
+              border-radius:20px;
+              ">興趣</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href ='{{url_for('contact')}}' style = "
+                  background-color:gray;
+                  color:white;
+                  padding: 9px 20px;
+                  border-radius:20px;
+              ">聯絡方式</a>
+            </li>
+            <a class="brand" href="#">
+              <img src="{{ url_for('static',filename='./welcome.jpg') }}" style = 'width:300px'> 
+            </a>
+           
+
+
+          </ul>
+        </div>
+       </div> 
+    </nav>
+
+<!-- 第二層 -->
+</div><div class ='icon'>
+  <p style = 'font-size:200%;'><i class="fa-solid fa-children"></i><i class="fa-solid fa-children"></i><i class="fa-solid fa-children"></i><i class="fa-solid fa-children"></i><i class="fa-solid fa-children"></i></p>
+</div>
+<div class = 'mydata' id = 'mydata' style = 'position:relative;top:-40px'>
+  
+  <div class = 'aboutme'>
+    <div class = 'pic'>
+      <img src="{{ url_for('static',filename='隊服照.JPG') }}" alt="selfie pic" class = 'selfie-image' style = 'height:90%;float:left;'>
+    </div>
+    <div class = 'mytext'>
+      <h4><i class="fa-solid fa-face-grin-stars"></i> ABOUT ME <i class="fa-solid fa-face-grin-stars"></i></h4>
+      <h5>大家好 我是盧于璇 我是台北人 今年21歲 目前就讀長庚大學人工智慧學程大四 </h5>
+      <h5>我是個對事物充滿好奇心 執行力高的人 也樂於幫助別人 是個開朗活潑的人</h5>  
+      <h5>由於從小就在各式各樣的團體生活中成長 所以我習慣團體合作</h5> 
+      <h5>在團體裡 我通常擔任的角色是帶領團隊或是善於給出不同想法的人，同時也擅於傾聽他人意見</h5> 
+      <h5 style ='position:relative;left:100px;'>我的興趣是<strong>打擊樂、唱歌、進行戶外活動、發掘好吃的美食！</strong></h5> 
+      <h5 style ='position:relative;left:100px;'><strong>有接觸過的程式：Python,C++,HTML,MySQL,JAVA</strong></h5> 
+      <h5  style ='position:relative;left:150px;'><i class="fa-regular fa-plate-utensils"></i></h5> 
+    </div>
+    <div class = 'pic'>
+      <img src="{{ url_for('static',filename='圍圈.JPG') }}" alt="selfie pic" class = 'selfie-image' style = 'height:200%;width: 350px;float:left;'>
+    </div>
+    <div class = 'mytext'>
+      <h5>在高中時參與樂儀隊，也在教練的魔鬼訓練下，培養出<strong>堅忍不拔、不輕易放棄的精神。</strong></h5>
+      <h5>也同時培養出如何在一個大團體中與隊友合作</h5>  
+      <h5>在社團裡曾擔任教學及組長的職位</h5> 
+      <h5>教學的負責內容主要是將自己熟練的技術，耐心的指導給學妹。</h5> 
+      <h5>組長的負責內容是處理組裡的所有大小事務，以及作為與教官、教練、隊員之間的溝通橋樑。</h5> 
+      <h5 style ='position:relative;left:10px;'>在高中時期擔任許多活動及比賽的負責人及總召ex:擔任下鄉服務隊的總召。</h5>
+      <h5  style ='position:relative;left:150px;'>從開會、監督分配工作、場刊、聯絡當地師長、規劃活動等都有參與負責。</h5>
+    </div>
+  </div>
+</div>
+
+<div class ='education' id = 'education' style = 'position:relative;top:25px'>
+  <div class = 'tfg'>
+    <a href = 'https://www.fg.tp.edu.tw/'><img src="{{ url_for('static',filename='北ㄧ.jpeg') }}" alt="selfie pic" class = 'selfie-image' style = 'width:200px;height:90%;float:left;'></a>
+  </div>
+  <div class = 'mytext2'>
+    <h4 style='position:relative;top:-40px'><i class="fa-solid fa-graduation-cap"></i> 學歷 <i class="fa-solid fa-graduation-cap"></i></h4>
+    <h5><strong>台北市立第一女子高級中學   (2016-2019)</strong></h5>
+  </div>
+  <p style ='position:relative;left:700px;top:30px'>----------------------------------------------------------------------</p>
+  <div class = 'cgu'>
+    <a href ='https://www.cgu.edu.tw/'><img src="{{ url_for('static',filename='長庚.png') }}" alt="selfie pic" class = 'selfie-image' style = 'width:200px;height:90%;float:left;'></a>
+  </div>
+  <div class = 'mytext2'>
+    <h5 style='position:relative;top:60px' ><strong>長庚大學人工智慧學士學位學程  (2019-2023)</strong></h5>
+  </div>
+  <div class = 'mytext2'>
+    <h4 style='position:relative;top:100px'><i class="fa-solid fa-computer"></i> 技術 <i class="fa-solid fa-computer"></i></h4>
+    <h5 style='position:relative;top:100px;left:120px'><strong>程式skills：C++,Python,HTML,SQL,JAVA</strong></h5>
+    <h5 style='position:relative;top:100px;left:120px'><strong>小專題：電影訂票系統網站, 個人履歷網站、資料庫系統專題</strong></h5>
+  </div>
+
+</div>
+
+
+
+<!-- 第三層 footer -->
+<footer class ='container-fluid text-center'>
+  <a class='btn' href ='{{url_for('index')}}' style = "
+  background-color:black;
+  color:white;
+  padding: 9px 20px;
+  border-radius:20px;
+  position:relative;top:200px;
+  ">回首頁</a>
+
+</footer>
+       
+</body> 
+</html>
